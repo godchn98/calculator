@@ -1,5 +1,7 @@
 package com.calculator.calculator;
 
+import com.calculator.calculator.calculate.PositiveNumber;
+
 import java.util.Arrays;
 
 public enum ArithmeticOperator {
@@ -41,7 +43,7 @@ public enum ArithmeticOperator {
         ArithmeticOperator arithmeticOperator = Arrays.stream(values())
                 .filter(v -> v.operator.equals(operator))
                 .findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Not vaild calculation"));
+                .orElseThrow(() -> new IllegalArgumentException("Not valid calculation"));
 
         return arithmeticOperator.arithmeticCalculate(operend1, operend2);
     }

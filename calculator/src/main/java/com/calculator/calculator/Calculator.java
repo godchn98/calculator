@@ -1,9 +1,6 @@
 package com.calculator.calculator;
 
-import com.calculator.calculator.calculate.AdditionOperator;
-import com.calculator.calculator.calculate.DivisionOperator;
-import com.calculator.calculator.calculate.MultiplyOperator;
-import com.calculator.calculator.calculate.SubtractionOperator;
+import com.calculator.calculator.calculate.*;
 
 import java.util.List;
 
@@ -11,7 +8,7 @@ public class Calculator {
 
     private static final List<NewArithmeticOperator> arithmeticOperaters = List.of(new AdditionOperator(), new SubtractionOperator(), new MultiplyOperator(), new DivisionOperator());
 
-    public static int calculate(int operend1, String operator, int operend2) {
+    public static int calculate(PositiveNumber operend1, String operator, PositiveNumber operend2) {
         return arithmeticOperaters.stream()
                 .filter(arithmeticOperaters -> arithmeticOperaters.supports(operator))
                 .map(arithmeticOperaters -> arithmeticOperaters.calculate(operend1, operend2))

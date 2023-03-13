@@ -1,5 +1,6 @@
 package com.calculator.calculator;
 
+import com.calculator.calculator.calculate.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @SpringBootTest
@@ -19,7 +21,7 @@ class CalculatorApplicationTests {
 	@ParameterizedTest
 	@MethodSource("formulaAndResult")
 	void calculateTest(int operend1, String operator, int operend2, int result) {
-		int calculateResult = Calculator.calculate(operend1, operator, operend2);
+		int calculateResult = Calculator.calculate(new PositiveNumber(operend1), operator, new PositiveNumber(operend2));
 
 		assertThat(calculateResult).isEqualTo(result);
 	}
@@ -32,6 +34,15 @@ class CalculatorApplicationTests {
 				arguments(10, "/", 5, 2)
 		);
 	}
+
+//	@DisplayName("Division exception test")
+//	@Test
+//	void calculateExceptionTest () {
+//		assertThatCode(() -> Calculator.calculate(new PositiveNumber(1), "/", new PositiveNumber(0)))
+//				.isInstanceOf(IllegalArgumentException.class)
+//				.hasMessage("Can not divide to 0");
+//	}
+
 
 //	@DisplayName("add test")
 //	@Test
