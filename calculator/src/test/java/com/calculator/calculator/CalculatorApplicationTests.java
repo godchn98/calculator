@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @SpringBootTest
@@ -32,6 +33,15 @@ class CalculatorApplicationTests {
 				arguments(10, "/", 5, 2)
 		);
 	}
+
+	@DisplayName("Division exception test")
+	@Test
+	void calculateExceptionTest () {
+		assertThatCode(() -> Calculator.calculate(1, "/", 0))
+				.isInstanceOf(IllegalArgumentException.class)
+				.hasMessage("Can not divide to 0");
+	}
+
 
 //	@DisplayName("add test")
 //	@Test
