@@ -1,6 +1,8 @@
 package com.calculator.calculator;
 
+import com.calculator.calculator.calculate.PositiveNumber;
+
 public interface NewArithmeticOperator {
     boolean supports(String operator);
-    int calculate(int operend1, int operend2);
+    int calculate(PositiveNumber operend1, PositiveNumber operend2);
 }

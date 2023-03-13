@@ -9,7 +9,7 @@ public class SubtractionOperator implements NewArithmeticOperator {
     }
 
     @Override
-    public int calculate(int operend1, int operend2) {
-        return operend1 - operend2;
+    public int calculate(PositiveNumber operend1, PositiveNumber operend2) {
+        return operend1.toInt() - operend2.toInt();
     }
 }
