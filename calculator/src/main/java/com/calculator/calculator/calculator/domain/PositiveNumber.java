@@ -1,4 +1,4 @@
-package com.calculator.calculator.calculate;
+package com.calculator.calculator.calculator.domain;
 
 public class PositiveNumber {
     private final  int value;

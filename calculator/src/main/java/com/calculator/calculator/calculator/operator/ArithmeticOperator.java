@@ -1,6 +1,4 @@
-package com.calculator.calculator;
-
-import com.calculator.calculator.calculate.PositiveNumber;
+package com.calculator.calculator.calculator.operator;
 
 import java.util.Arrays;
 

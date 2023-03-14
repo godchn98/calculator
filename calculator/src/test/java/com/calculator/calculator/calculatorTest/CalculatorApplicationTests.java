@@ -1,8 +1,8 @@
-package com.calculator.calculator;
+package com.calculator.calculator.calculatorTest;
 
-import com.calculator.calculator.calculate.PositiveNumber;
+import com.calculator.calculator.calculator.domain.Calculator;
+import com.calculator.calculator.calculator.domain.PositiveNumber;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -11,7 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatCode;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 @SpringBootTest

@@ -1,6 +1,7 @@
-package com.calculator.calculator.calculate;
+package com.calculator.calculator.calculator.operator;
 
-import com.calculator.calculator.NewArithmeticOperator;
+import com.calculator.calculator.calculator.domain.NewArithmeticOperator;
+import com.calculator.calculator.calculator.domain.PositiveNumber;
 
 public class MultiplyOperator implements NewArithmeticOperator {
     @Override

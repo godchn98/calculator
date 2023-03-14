@@ -1,6 +1,9 @@
-package com.calculator.calculator;
+package com.calculator.calculator.calculator.domain;
 
-import com.calculator.calculator.calculate.*;
+import com.calculator.calculator.calculator.operator.AdditionOperator;
+import com.calculator.calculator.calculator.operator.DivisionOperator;
+import com.calculator.calculator.calculator.operator.MultiplyOperator;
+import com.calculator.calculator.calculator.operator.SubtractionOperator;
 
 import java.util.List;
 
