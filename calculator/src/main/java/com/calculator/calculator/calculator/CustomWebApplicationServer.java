@@ -1,6 +1,7 @@
 package com.calculator.calculator.calculator;
 
 import com.calculator.calculator.HttpRequest;
+import com.calculator.calculator.HttpResponse;
 import com.calculator.calculator.QueryStrings;
 import com.calculator.calculator.calculator.domain.Calculator;
 import com.calculator.calculator.calculator.domain.PositiveNumber;
@@ -46,11 +47,17 @@ public class CustomWebApplicationServer {
                     if(httpRequest.isGetRequest() && httpRequest.matchPath("/calculate")) {
                         QueryStrings queryStrings = httpRequest.getQueryStrings();
 
-                        int operand1 = Integer.parseInt(queryStrings.getValue("opperand1"));
+                        int operand1 = Integer.parseInt(queryStrings.getValue("operand1"));
                         String operator = queryStrings.getValue("operator");
                         int operand2 = Integer.parseInt(queryStrings.getValue("operand2"));
 
                         int result = Calculator.calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2));
+                        byte[] body = String.valueOf(result).getBytes();
+
+                        HttpResponse response = new HttpResponse(dos);
+                        response.response200Header("application/json", body.length);
+                        response.responseBody(body);
+
                     }
 
                 }
